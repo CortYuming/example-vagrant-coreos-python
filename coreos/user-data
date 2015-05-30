@@ -1,0 +1,11 @@
+#cloud-config
+
+coreos:
+write_files:
+  - path: /opt/bin/python
+    permissions: 0755
+    owner: core:core
+    content: |
+      #!/bin/bash
+
+      /home/core/example-vagrant-coreos-python/script/run python $@

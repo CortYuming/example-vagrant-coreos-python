@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+docker build -t=python27 example-vagrant-coreos-python/
+
+docker run \
+       --rm \
+       -it \
+       --name python.`date +%s` \
+       python27 \
+       $@
